@@ -7,7 +7,7 @@ import { IDomain } from './interface';
 export class DomainService {
   constructor(@InjectModel('Domain') private readonly domainModel: Model<IDomain>) { }
 
-  async createDomain(domain: IDomain): Promise<IDomain[]> {
+  async createDomain(domain: IDomain): Promise<{}> {
     const createdDomain = new this.domainModel({ ...domain });
     return await createdDomain.save();
   }
